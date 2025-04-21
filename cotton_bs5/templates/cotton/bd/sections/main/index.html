@@ -1,0 +1,5 @@
+<main class="bd-main order-1 {% if not sidebar %}d-block{% endif %}">
+  {{ intro }}
+  {{ sidebar }}
+  <div class="bd-content ps-lg-2">{{ slot }}</div>
+</main>

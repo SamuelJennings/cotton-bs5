@@ -1,0 +1,5 @@
+<c-vars position="start" breakpoint />
+<div class="{% if breakpoint %}offcanvas-{{ breakpoint }} {% else %}offcanvas{% endif %} offcanvas-{{ position }} {{ class }}"
+     tabindex="-1"
+     {{ attrs }}>{{ slot }}
+</div>

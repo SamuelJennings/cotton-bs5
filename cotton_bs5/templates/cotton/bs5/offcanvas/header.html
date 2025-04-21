@@ -1,0 +1,8 @@
+<div class="offcanvas-header {{ class }}">
+  {% if title %}
+    <c-bs5.offcanvas.title :title="title" />
+  {% else %}
+    {{ slot }}
+  {% endif %}
+  <c-bs5.button.dismiss data-bs-dismiss="offcanvas" />
+</div>
