@@ -11,6 +11,7 @@ packages = [{include = "cotton_bs5"}]
 python = ">=3.10,<4.0"
 django-cotton = "^2.0.3"
 django-compressor = {version = "^4.5.1", optional = true}
+django-libsass = "^0.9"
 
 [tool.poetry.extras]
 django-compressor = ["django-compressor"]
