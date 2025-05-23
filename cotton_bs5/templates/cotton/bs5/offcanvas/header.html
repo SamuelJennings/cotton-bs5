@@ -1,8 +1,9 @@
+<c-vars id />
 <div class="offcanvas-header {{ class }}">
   {% if title %}
-    <c-bs5.offcanvas.title :title="title" />
+    <c-bs5.offcanvas.title :title="title" id="{{ id }}Label" />
   {% else %}
     {{ slot }}
   {% endif %}
-  <c-bs5.button.dismiss data-bs-dismiss="offcanvas" />
+  <c-bs5.button.dismiss data-bs-dismiss="offcanvas" data-bs-target="#{{ id }}" />
 </div>

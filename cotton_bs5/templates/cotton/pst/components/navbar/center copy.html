@@ -1,0 +1,6 @@
+<c-vars location="navbar" />
+{% if theme_options.navbar_center %}
+  <div class="{{ location }}-header-items__center {{ class }}">
+    <c-pst.components.navbar.items :nav_items="theme_options.navbar_center" />
+  </div>
+{% endif %}

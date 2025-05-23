@@ -1,0 +1,6 @@
+<c-vars active li_class li_attrs />
+<li class="nav-item {{ li_class }}" {{ li_attrs }}>
+  <a class="nav-link {% if active %}active{% endif %} {{ class }}"
+     {% if active %}aria-current="page"{% endif %}
+     {{ attrs }}>{{ before_text }}{{ text }}{{ after_text }}</a>
+</li>

@@ -6,7 +6,7 @@
     <c-sections.navbar.brand />
     {% comment %} <c-sections.navbar.search /> {% endcomment %}
     {% comment %} <c-sections.navbar.offcanvas /> {% endcomment %}
-    <c-button.group class="navbar-nav ms-md-auto" gap="2">
+    <c-components.button.group class="navbar-nav ms-md-auto" gap="2">
     {% if request.user.is_authenticated %}
       <div class="nav-item col-6 col-lg-auto">
         <c-widgets.quick-add />
@@ -24,7 +24,7 @@
          title="{% trans "Toggle user navigation" %}"
          aria-label="{% trans "Toggle user navigation" %}"></a>
     </div>
-    </c-button.group>
+    </c-components.button.group>
   </nav>
 </header>
 {% comment %}

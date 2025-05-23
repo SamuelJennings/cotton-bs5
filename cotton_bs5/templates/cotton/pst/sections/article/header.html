@@ -1,0 +1,22 @@
+{% comment %} Usage:
+<c-pst.sections.article.header>
+  {% for item in start_items %}
+    <c-pst.sections.article.header-item>
+      content
+    </c-pst.sections.article.header-item>   
+  {% endfor %}
+  <c-slot name="header_end">
+    {% for item in start_items %}
+      <c-pst.sections.article.header-item>
+        content
+      </c-pst.sections.article.header-item>   
+    {% endfor %}
+  </c-slot>
+</c-pst.sections.article.header>
+{% endcomment %}
+<div class="bd-header-article d-print-none">
+  <div class="header-article-items header-article__inner {{ class }}">
+    {% if slot %}<div class="header-article-items__start">{{ slot }}</div>{% endif %}
+    {% if header_end %}<div class="header-article-items__end">{{ header_end }}</div>{% endif %}
+  </div>
+</div>

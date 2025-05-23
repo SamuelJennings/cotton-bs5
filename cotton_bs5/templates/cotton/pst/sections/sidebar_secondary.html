@@ -1,0 +1,10 @@
+<c-vars id="pst-secondary-sidebar" />
+<dialog id="{{ id }}-modal"></dialog>
+<div id="{{ id }}" class="bd-sidebar-secondary bd-toc">
+  <div class="sidebar-secondary-items sidebar-secondary__inner">
+    {{ slot }}
+    {% comment %} {% for toc_item in secondary_sidebar_items %}
+      <div class="sidebar-secondary-item">{% include toc_item %}</div>
+    {% endfor %} {% endcomment %}
+  </div>
+</div>

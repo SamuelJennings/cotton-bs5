@@ -1,0 +1,9 @@
+{% if theme_content_footer_items %}
+  <footer class="bd-footer-content">
+    <div class="footer-content-items footer-content__inner">
+      {% for item in theme_content_footer_items %}
+        <div class="footer-content-item">{% include item %}</div>
+      {% endfor %}
+    </div>
+  </footer>
+{% endif %}

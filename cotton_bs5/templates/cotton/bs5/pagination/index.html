@@ -1,4 +1,4 @@
-{% load partials easy_icons %}
+{% load easy_icons %}
 
 <nav {{ attrs }}>
   <ul class="pagination {{ ul_class }}">
@@ -28,7 +28,7 @@
           {% if num == page_obj.number %}
             <strong class="page-link active">{{ num }}</strong>
           {% else %}
-            {% partial page %}
+            <c-bs5.pagination.link :num="num" />
           {% endif %}
         {% endif %}
       {% endfor %}

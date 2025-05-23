@@ -1,0 +1,12 @@
+{% comment %} Usage:
+<c-pst.sections.article.footer>
+  {% for item in my_footer_items %}
+    <c-pst.sections.article.footer-item>
+      content
+    </c-pst.sections.article.footer-item>   
+  {% endfor %}
+</c-pst.sections.article.footer>
+{% endcomment %}
+<footer class="bd-footer-article">
+  <div class="footer-article-items footer-article__inner">{{ slot }}</div>
+</footer>

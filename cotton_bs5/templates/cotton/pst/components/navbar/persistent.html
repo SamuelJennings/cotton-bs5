@@ -1,0 +1,8 @@
+<c-vars location="navbar" />
+{% if theme_options.navbar_persistent %}
+  {% for navbar_item in theme_options.navbar_persistent %}
+    <div class="navbar-item navbar-persistent--container">
+      <c-component :is="navbar_item" />
+    </div>
+  {% endfor %}
+{% endif %}
