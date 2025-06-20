@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+  <c-layouts.standard>
+    <div class="container py-3">
+      <h1>{{ view_class_name }}</h1>
+      {% comment %} <div class="card overflow-hidden">
+        <pre><code class="language-python">{{ view_class|safe }}</code></pre>
+      </div> {% endcomment %}
+      <div class="container">
+        <div class="row row-cols-1">
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <h1 class="card-title text-truncate">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, mollitia vero libero nobis obcaecati sed officiis? Deleniti possimus optio in minus cum provident explicabo officia, iusto totam beatae consequuntur magni?
+                </h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </c-layouts.standard>
+{% endblock content %}
