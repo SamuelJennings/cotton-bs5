@@ -1,0 +1,35 @@
+<style>
+  .c-bs5-sidebar {
+    --c-bs5-sidebar-width: 255px;
+    width: var(--c-bs5-sidebar-width);
+  }
+
+  @media (min-width: 768px) {
+    .c-bs5-sidebar {
+      flex: 0 0 auto;
+      height: calc(100vh - var(--navbar-height));
+      position: sticky;
+      top: var(--navbar-height);
+    }
+  }
+</style>
+<c-vars id width />
+<c-bs5.offcanvas id="{{ id }}"
+                 class="c-bs5-sidebar vstack overflow-auto {{ class }}"
+                 :breakpoint="breakpoint"
+                 :attrs="attrs"
+                 style="--c-bs5-sidebar-width: {{ width }}">
+  <div class="p-md-3">
+    {% if header %}
+      <c-bs5.offcanvas.header id="{{ id }}"
+                              class="p-{{ breakpoint }}-0 d-flex"
+                              dismiss_button_class="d-block d-{{ breakpoint }}-none"
+                              :attrs="header"
+                              only />
+    {% endif %}
+    <c-bs5.offcanvas.body class="vstack flex-grow-1 pt-{{ breakpoint }}-2">
+      {{ slot }}
+    </c-bs5.offcanvas.body>
+  </div>
+  {{ footer }}
+</c-bs5.offcanvas>

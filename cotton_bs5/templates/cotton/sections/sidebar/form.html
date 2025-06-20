@@ -1,0 +1,11 @@
+{% load crispy_forms_tags %}
+
+<c-sections.sidebar class="sidebar-primary {{ class }}">
+  {% crispy form %}
+  <c-slot name="footer">
+    <c-bs5.offcanvas.footer class="sticky-bottom border-top bg-white"
+                            :attrs="footer">
+      <c-bs5.button text="Submit" size="sm" />
+    </c-bs5.offcanvas.footer>
+  </c-slot>
+</c-sections.sidebar>
