@@ -43,6 +43,24 @@ files = [
 ]
 
 [[package]]
+name = "crispy-bootstrap5"
+version = "2025.6"
+description = "Bootstrap5 template pack for django-crispy-forms"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "crispy_bootstrap5-2025.6-py3-none-any.whl", hash = "sha256:a343aa128b4383f35f00295b94de2b10862f2a4f24eda21fa6ead45234c07050"},
+    {file = "crispy_bootstrap5-2025.6.tar.gz", hash = "sha256:f1bde7cac074c650fc82f31777d4a4cfd0df2512c68bc4128f259c75d3daada4"},
+]
+
+[package.dependencies]
+django = ">=4.2"
+django-crispy-forms = ">=2.3"
+
+[package.extras]
+test = ["pytest", "pytest-django"]
+
+[[package]]
 name = "cssbeautifier"
 version = "1.15.4"
 description = "CSS unobfuscator and beautifier."
@@ -111,17 +129,31 @@ rjsmin = "1.2.2"
 
 [[package]]
 name = "django-cotton"
-version = "2.0.3"
+version = "2.1.2"
 description = "Bringing component based design to Django templates."
 optional = false
 python-versions = "<4,>=3.8"
 files = [
-    {file = "django_cotton-2.0.3-py3-none-any.whl", hash = "sha256:53fc1d7756c3728ca9c76c1402758c6778147e0653b12cb3890a5f5e679125e4"},
-    {file = "django_cotton-2.0.3.tar.gz", hash = "sha256:ffce33d8e680718928e67fe7e9c6bc64c9d03fea0098b313863728fc38c049bf"},
+    {file = "django_cotton-2.1.2-py3-none-any.whl", hash = "sha256:8492cb7cfe881455a1b9dfaaaec2d1943494a1d3d2e2066ac7da6ce31afceef3"},
+    {file = "django_cotton-2.1.2.tar.gz", hash = "sha256:ad467f725239bf43004dad87dfc70f95c08d96efde4166d4bfb815e7cb72c56f"},
 ]
 
 [package.dependencies]
 django = ">=4.2,<5.3"
+
+[[package]]
+name = "django-crispy-forms"
+version = "2.4"
+description = "Best way to have Django DRY forms"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "django_crispy_forms-2.4-py3-none-any.whl", hash = "sha256:5a4b99876cfb1bdd3e47727731b6d4197c51c0da502befbfbec6a93010b02030"},
+    {file = "django_crispy_forms-2.4.tar.gz", hash = "sha256:915e1ffdeb2987d78b33fabfeff8e5203c8776aa910a3a659a2c514ca125f3bd"},
+]
+
+[package.dependencies]
+django = ">=4.2"
 
 [[package]]
 name = "django-libsass"
@@ -641,4 +673,4 @@ django-compressor = ["django-compressor"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.10,<4.0"
-content-hash = "39c6d114060222b91c0f18b980d10befbb9655f0364c4d0805a1a087cd220925"
+content-hash = "0d364ad167407e648e40e78897947807fd71667c91c9088ee743d952c0ab13a3"
