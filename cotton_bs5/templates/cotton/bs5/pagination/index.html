@@ -2,17 +2,19 @@
 
 <nav {{ attrs }}>
   <ul class="pagination {{ ul_class }}">
-    <!-- First and Previous Links -->
+    <!-- First Link -->
     <li class="page-item {% if not page_obj.has_previous %}disabled{% endif %}">
       {% if page_obj.has_previous %}
-        <c-bs5.pagination.link href="?page=1" label="{{ start_icon }}" />
+        <c-bs5.pagination.link num="1" label="{{ start_icon }}" />
       {% else %}
         <span class="page-link" tabindex="-1">{{ start_icon }}</span>
       {% endif %}
     </li>
+    <!-- Previous Link -->
     <li class="page-item {% if not page_obj.has_previous %}disabled{% endif %}">
       {% if page_obj.has_previous %}
-        <c-bs5.pagination.link href="?page={{ page_obj.previous_page_number }}" label="{{ previous_icon }}" />
+        <c-bs5.pagination.link num="{{ page_obj.previous_page_number }}"
+                               label="{{ previous_icon }}" />
       {% else %}
         <span class="page-link" tabindex="-1">{{ previous_icon }}</span>
       {% endif %}
@@ -46,14 +48,16 @@
         </li>
       {% endfor %}
     {% endif %}
-    <!-- Next and Last Links -->
+    <!-- Next Link -->
     <li class="page-item {% if not page_obj.has_next %}disabled{% endif %}">
       {% if page_obj.has_next %}
-        <c-bs5.pagination.link :num="page_obj.next_page_number" :label="next_icon" />
+        <c-bs5.pagination.link :num="page_obj.next_page_number"
+                               :label="next_icon" />
       {% else %}
         <span class="page-link">{{ next_icon }}</span>
       {% endif %}
     </li>
+    <!-- Last Link -->
     <li class="page-item {% if not page_obj.has_next %}disabled{% endif %}">
       {% if page_obj.has_next %}
         <c-bs5.pagination.link :num="paginator.num_pages" :label="end_icon" />
