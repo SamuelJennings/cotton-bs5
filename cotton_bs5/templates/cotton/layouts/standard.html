@@ -8,5 +8,5 @@
       {% if sections.sidebar_secondary %}<c-component :attrs="sections.sidebar_secondary" only />{% endif %}
     </div>
   </main>
-  {% if sections.footer %}<c-pst.sections.footer-content />{% endif %}
+  {% comment %} {% if sections.footer %}<c-component :attrs="sections.footer" />{% endif %} {% endcomment %}
 </div>
