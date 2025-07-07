@@ -5,7 +5,7 @@
     display: block;
   }
 </style>
-<div class="offcanvas offcanvas-start"
+<div class="offcanvas offcanvas-start show"
      tabindex="-1"
      id="headerMobile"
      aria-labelledby="offcanvasLabel">
@@ -18,15 +18,16 @@
                                   style="--pst-header-height: 6rem" />
     <c-sections.navbar.search class="justify-content-center mx-auto w-75 mb-4" />
     <c-components.menu>
-      <c-components.menu.group text="{% trans "Site navigation" %}">
-        {% for item in menu %}
-          <c-bs5.navbar.link-item href="{{ item.url }}" text="{{ item.name }}">
-            <c-slot name="before_text">
-              {% icon item.icon class="me-2" style="min-width:25px;" %}
-            </c-slot>
-          </c-bs5.navbar.link-item>
-        {% endfor %}
-      </c-components.menu.group>
+      {% for item in menu %}
+        {% if item.children %}
+          <c-sections.navbar.mobile.header text="{{ item.label }}" />
+          {% for child in item.children %}
+            {% if child.visible %}<c-bs5.navbar.link-item href="{{ child.url }}" text="{{ child.name }}" />{% endif %}
+          {% endfor %}
+        {% else %}
+          <c-bs5.navbar.link-item href="{{ item.url }}" text="{{ item.name }}" />
+        {% endif %}
+      {% endfor %}
       <c-components.menu.group text="{% trans "External links" %}">
         {% if theme_options.documentation_url %}
           <c-bs5.navbar.link-item href="{{ theme_options.documentation_url }}"
@@ -38,12 +39,14 @@
                                   text="{% trans "GitHub Repository" %}"
                                   class="nav-external" />
         {% endif %}
-        <c-components.menu.group text="{% trans "External links" %}" />
         {% for item in theme_options.external_links %}
           <c-bs5.navbar.link-item href="{{ item.url }}"
                                   text="{{ item.name }}"
                                   class="nav-external" />
         {% endfor %}
+        <c-bs5.navbar.link-item href="https://fairdm.org/"
+                                text="FairDM Framework"
+                                class="nav-external" />
       </c-components.menu.group>
     </c-components.menu>
   </div>
