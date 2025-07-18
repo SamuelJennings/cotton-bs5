@@ -1,0 +1,8 @@
+<h2 class="accordion-header">
+  <button class="accordion-button {% if not show %}collapsed{% endif %}"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#{{ id }}"
+          aria-expanded="false"
+          aria-controls="{{ id }}">{{ label }}</button>
+</h2>
