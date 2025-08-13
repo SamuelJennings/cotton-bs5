@@ -3,7 +3,8 @@
      id="bdNavbar"
      aria-labelledby="bdNavbarOffcanvasLabel">
   <div class="offcanvas-header px-4 pb-0">
-    <h5 class="offcanvas-title text-white" id="bdNavbarOffcanvasLabel">Bootstrap</h5>
+    <h5 class="offcanvas-title text-white"
+        id="bdNavbarOffcanvasLabel">Bootstrap</h5>
     <button type="button"
             class="btn-close btn-close-white"
             data-bs-dismiss="offcanvas"
@@ -21,9 +22,8 @@
     </ul>
     <hr class="d-lg-none text-white-50" />
     <c-components.button.group class="navbar-nav ms-md-auto" gap="2">
-    {% if request.user.is_authenticated %}<c-widgets.quick-add />{% endif %}
-    <c-widgets.theme-toggle />
-    {% include "account_management/sidebar_toggle.html" %}
+      {% if request.user.is_authenticated %}<c-widgets.quick-add />{% endif %}
+      <c-widgets.theme-toggle />
     </c-components.button.group>
     <ul class="navbar-nav flex-row flex-wrap ms-md-auto">
       {% comment %} <li class="nav-item col-6 col-lg-auto">
