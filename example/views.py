@@ -78,6 +78,10 @@ class StandardLayout(BaseMixin, CottonBS5ComponentMixin, TemplateView):
         return context
 
 
+class Home(TemplateView):
+    template_name = "example/home.html"
+
+
 class SecondarySidebarEmpty(StandardLayout):
     """
     View to demonstrate a layout with the secondary sidebar hidden.

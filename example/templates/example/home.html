@@ -1,0 +1,600 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% load cotton %}
+{% block content %}
+  <div class="container py-4">
+    <h1 class="mb-4">Cotton BS5 Component Showcase</h1>
+    <p class="text-secondary">Rendered output and the Cotton markup used to generate it.</p>
+    <hr class="my-4" />
+    <!-- Alerts -->
+    <section class="mb-5">
+      <h2 class="h4">Alert</h2>
+      <div class="mb-3">
+        <c-alert variant="warning" dismissible>
+          Watch out!
+        </c-alert>
+      </div>
+      <pre><code class="language-html">&lt;c-alert variant=&quot;warning&quot; dismissible&gt;Watch out!&lt;/c-alert&gt;</code></pre>
+    </section>
+    <!-- Badge -->
+    <section class="mb-5">
+      <h2 class="h4">Badge</h2>
+      <div class="mb-3">
+        <c-badge variant="primary" pill>
+          New
+        </c-badge>
+      </div>
+      <pre><code class="language-html">&lt;c-badge variant=&quot;primary&quot; pill&gt;New&lt;/c-badge&gt;</code></pre>
+    </section>
+    <!-- Button -->
+    <section class="mb-5">
+      <h2 class="h4">Button</h2>
+      <div class="mb-3">
+        <c-button variant="success">
+          Save
+        </c-button>
+      </div>
+      <pre><code class="language-html">&lt;c-button variant=&quot;success&quot;&gt;Save&lt;/c-button&gt;</code></pre>
+    </section>
+    <!-- Button group -->
+    <section class="mb-5">
+      <h2 class="h4">Button group</h2>
+      <div class="mb-3">
+        <c-button_group>
+          <c-button>
+            Left
+          </c-button>
+          <c-button>
+            Middle
+          </c-button>
+          <c-button>
+            Right
+          </c-button>
+        </c-button_group>
+      </div>
+      <pre><code class="language-html">&lt;c-button_group&gt;
+  &lt;c-button&gt;Left&lt;/c-button&gt;
+  &lt;c-button&gt;Middle&lt;/c-button&gt;
+  &lt;c-button&gt;Right&lt;/c-button&gt;
+&lt;/c-button_group&gt;</code></pre>
+    </section>
+    <!-- Card -->
+    <section class="mb-5">
+      <h2 class="h4">Card</h2>
+      <div class="mb-3" style="max-width: 28rem;">
+        <c-card>
+          <c-card.header>
+            Header
+          </c-card.header>
+          <c-card.body>
+            Body content
+          </c-card.body>
+          <c-card.footer>
+            Footer
+          </c-card.footer>
+        </c-card>
+      </div>
+      <pre><code class="language-html">&lt;c-card&gt;
+  &lt;c-card.header&gt;Header&lt;/c-card.header&gt;
+  &lt;c-card.body&gt;Body content&lt;/c-card.body&gt;
+  &lt;c-card.footer&gt;Footer&lt;/c-card.footer&gt;
+&lt;/c-card&gt;</code></pre>
+    </section>
+    <!-- Collapse -->
+    <section class="mb-5">
+      <h2 class="h4">Collapse</h2>
+      <div class="mb-3">
+        <c-button data-bs-toggle="collapse"
+                  data-bs-target="#demoCollapse">
+          Toggle
+        </c-button>
+        <c-collapse id="demoCollapse" class="mt-2">
+          This toggles
+        </c-collapse>
+      </div>
+      <pre><code class="language-html">&lt;c-button data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#demoCollapse&quot;&gt;Toggle&lt;/c-button&gt;
+&lt;c-collapse id=&quot;demoCollapse&quot; class=&quot;mt-2&quot;&gt;This toggles&lt;/c-collapse&gt;</code></pre>
+    </section>
+    <!-- Dropdown -->
+    <section class="mb-5">
+      <h2 class="h4">Dropdown</h2>
+      <div class="mb-3">
+        <c-dropdown>
+          <c-dropdown.toggle>
+            Menu
+          </c-dropdown.toggle>
+          <c-dropdown.item href="#">
+            Action
+          </c-dropdown.item>
+          <c-dropdown.item href="#">
+            Another action
+          </c-dropdown.item>
+          <c-dropdown.divider />
+          <c-dropdown.item href="#">
+            Something else
+          </c-dropdown.item>
+        </c-dropdown>
+      </div>
+      <pre><code class="language-html">&lt;c-dropdown&gt;
+  &lt;c-dropdown.toggle&gt;Menu&lt;/c-dropdown.toggle&gt;
+  &lt;c-dropdown.item href=&quot;#&quot;&gt;Action&lt;/c-dropdown.item&gt;
+  &lt;c-dropdown.item href=&quot;#&quot;&gt;Another action&lt;/c-dropdown.item&gt;
+  &lt;c-dropdown.divider /&gt;
+  &lt;c-dropdown.item href=&quot;#&quot;&gt;Something else&lt;/c-dropdown.item&gt;
+&lt;/c-dropdown&gt;</code></pre>
+    </section>
+    <!-- Form controls -->
+    <section class="mb-5">
+      <h2 class="h4">Form controls</h2>
+      <div class="mb-3" style="max-width: 28rem;">
+        <c-form.input id="name"
+                      label="Name"
+                      placeholder="Jane"
+                      required />
+        <c-form.select id="color" label="Color">
+          <option>Red</option>
+          <option>Green</option>
+          <option>Blue</option>
+        </c-form.select>
+        <c-form.textarea id="bio" label="Bio" rows="3">
+          Hello
+        </c-form.textarea>
+        <c-form.checkbox id="agree" label="I agree" />
+        <c-form.switch id="enabled" label="Enabled" checked />
+        <c-form.radio id="r1" name="choices" label="Choice A" />
+        <c-form.radio id="r2" name="choices" label="Choice B" />
+      </div>
+      <pre><code class="language-html">&lt;c-form.input id=&quot;name&quot; label=&quot;Name&quot; placeholder=&quot;Jane&quot; required /&gt;
+&lt;c-form.select id=&quot;color&quot; label=&quot;Color&quot;&gt;
+  &lt;option&gt;Red&lt;/option&gt;
+  &lt;option&gt;Green&lt;/option&gt;
+  &lt;option&gt;Blue&lt;/option&gt;
+&lt;/c-form.select&gt;
+&lt;c-form.textarea id=&quot;bio&quot; label=&quot;Bio&quot; rows=&quot;3&quot;&gt;Hello&lt;/c-form.textarea&gt;
+&lt;c-form.checkbox id=&quot;agree&quot; label=&quot;I agree&quot; /&gt;
+&lt;c-form.switch id=&quot;enabled&quot; label=&quot;Enabled&quot; checked /&gt;
+&lt;c-form.radio id=&quot;r1&quot; name=&quot;choices&quot; label=&quot;Choice A&quot; /&gt;
+&lt;c-form.radio id=&quot;r2&quot; name=&quot;choices&quot; label=&quot;Choice B&quot; /&gt;</code></pre>
+    </section>
+    <!-- Grid and Cols -->
+    <section class="mb-5">
+      <h2 class="h4">Grid</h2>
+      <div class="mb-3">
+        <c-grid cols="2" :responsive="{'md':3,'lg':4}" gap="2">
+          <c-grid.col>
+            1
+          </c-grid.col>
+          <c-grid.col>
+            2
+          </c-grid.col>
+          <c-grid.col>
+            3
+          </c-grid.col>
+          <c-grid.col>
+            4
+          </c-grid.col>
+        </c-grid>
+      </div>
+      <pre><code class="language-html">&lt;c-grid cols=&quot;2&quot; :responsive=&quot;{'md':3,'lg':4}&quot; gap=&quot;2&quot;&gt;
+  &lt;c-grid.col&gt;1&lt;/c-grid.col&gt;
+  &lt;c-grid.col&gt;2&lt;/c-grid.col&gt;
+  &lt;c-grid.col&gt;3&lt;/c-grid.col&gt;
+  &lt;c-grid.col&gt;4&lt;/c-grid.col&gt;
+&lt;/c-grid&gt;</code></pre>
+    </section>
+    <!-- List group -->
+    <section class="mb-5">
+      <h2 class="h4">List group</h2>
+      <div class="mb-3" style="max-width: 28rem;">
+        <c-list_group>
+          <c-list_group.item>
+            Item
+          </c-list_group.item>
+          <c-list_group.item href="#">
+            A link item
+          </c-list_group.item>
+        </c-list_group>
+      </div>
+      <pre><code class="language-html">&lt;c-list_group&gt;
+  &lt;c-list_group.item&gt;Item&lt;/c-list_group.item&gt;
+  &lt;c-list_group.item href=&quot;#&quot;&gt;A link item&lt;/c-list_group.item&gt;
+&lt;/c-list_group&gt;</code></pre>
+    </section>
+    <!-- Modal (structure only) -->
+    <section class="mb-5">
+      <h2 class="h4">Modal</h2>
+      <div class="mb-3">
+        <c-button data-bs-toggle="modal"
+                  data-bs-target="#demoModal">
+          Open modal
+        </c-button>
+        <c-modal id="demoModal" fade>
+          <c-modal.header :id="'demoModal'" :title="'Demo modal'" />
+          <c-modal.body>
+            Body content
+          </c-modal.body>
+          <c-modal.footer>
+            <c-button variant="secondary" data-bs-dismiss="modal">
+              Close
+            </c-button>
+            <c-button variant="primary">
+              Save changes
+            </c-button>
+          </c-modal.footer>
+        </c-modal>
+      </div>
+      <pre><code class="language-html">&lt;c-button data-bs-toggle=&quot;modal&quot; data-bs-target=&quot;#demoModal&quot;&gt;Open modal&lt;/c-button&gt;
+&lt;c-modal id=&quot;demoModal&quot; fade&gt;
+  &lt;c-modal.header :id=&quot;'demoModal'&quot; :title=&quot;'Demo modal'&quot; /&gt;
+  &lt;c-modal.body&gt;Body content&lt;/c-modal.body&gt;
+  &lt;c-modal.footer&gt;
+    &lt;c-button variant=&quot;secondary&quot; data-bs-dismiss=&quot;modal&quot;&gt;Close&lt;/c-button&gt;
+    &lt;c-button variant=&quot;primary&quot;&gt;Save changes&lt;/c-button&gt;
+  &lt;/c-modal.footer&gt;
+&lt;/c-modal&gt;</code></pre>
+    </section>
+    <!-- Navbar and Nav -->
+    <section class="mb-5">
+      <h2 class="h4">Navbar</h2>
+      <div class="mb-3 border rounded p-3">
+        <c-navbar brand="Example" brand_href="/">
+          <c-nav>
+            <c-nav.link>
+              Home
+            </c-nav.link>
+            <c-nav.link>
+              Features
+            </c-nav.link>
+            <c-nav.link>
+              Pricing
+            </c-nav.link>
+          </c-nav>
+        </c-navbar>
+      </div>
+      <pre><code class="language-html">&lt;c-navbar brand=&quot;Example&quot; brand_href=&quot;/&quot;&gt;
+  &lt;c-nav&gt;
+    &lt;c-nav.link&gt;Home&lt;/c-nav.link&gt;
+    &lt;c-nav.link&gt;Features&lt;/c-nav.link&gt;
+    &lt;c-nav.link&gt;Pricing&lt;/c-nav.link&gt;
+  &lt;/c-nav&gt;
+&lt;/c-navbar&gt;</code></pre>
+    </section>
+    <!-- Offcanvas -->
+    <section class="mb-5">
+      <h2 class="h4">Offcanvas</h2>
+      <div class="mb-3">
+        <c-button data-bs-toggle="offcanvas"
+                  data-bs-target="#demoOffcanvas">
+          Open
+        </c-button>
+        <c-offcanvas id="demoOffcanvas"
+                     position="end"
+                     class="text-bg-light">
+          <c-offcanvas.header>
+            <c-offcanvas.title>
+              Offcanvas
+            </c-offcanvas.title>
+          </c-offcanvas.header>
+          <c-offcanvas.body>
+            Some text...
+          </c-offcanvas.body>
+          <c-offcanvas.footer>
+            <c-button data-bs-dismiss="offcanvas">
+              Close
+            </c-button>
+          </c-offcanvas.footer>
+        </c-offcanvas>
+      </div>
+      <pre><code class="language-html">&lt;c-button data-bs-toggle=&quot;offcanvas&quot; data-bs-target=&quot;#demoOffcanvas&quot;&gt;Open&lt;/c-button&gt;
+&lt;c-offcanvas id=&quot;demoOffcanvas&quot; position=&quot;end&quot; class=&quot;text-bg-light&quot;&gt;
+  &lt;c-offcanvas.header&gt;
+    &lt;c-offcanvas.title&gt;Offcanvas&lt;/c-offcanvas.title&gt;
+  &lt;/c-offcanvas.header&gt;
+  &lt;c-offcanvas.body&gt;Some text...&lt;/c-offcanvas.body&gt;
+  &lt;c-offcanvas.footer&gt;
+    &lt;c-button data-bs-dismiss=&quot;offcanvas&quot;&gt;Close&lt;/c-button&gt;
+  &lt;/c-offcanvas.footer&gt;
+&lt;/c-offcanvas&gt;</code></pre>
+    </section>
+    <!-- Pagination -->
+    <section class="mb-5">
+      <h2 class="h4">Pagination</h2>
+      <div class="mb-3">
+        <c-pagination>
+          <c-pagination.link disabled>
+            «
+          </c-pagination.link>
+          <c-pagination.link page="1" active>
+            1
+          </c-pagination.link>
+          <c-pagination.link page="2">
+            2
+          </c-pagination.link>
+          <c-pagination.link page="3">
+            3
+          </c-pagination.link>
+          <c-pagination.link page="2">
+            »
+          </c-pagination.link>
+        </c-pagination>
+      </div>
+      <pre><code class="language-html">&lt;c-pagination&gt;
+  &lt;c-pagination.link disabled&gt;&amp;laquo;&lt;/c-pagination.link&gt;
+  &lt;c-pagination.link page=&quot;1&quot; active&gt;1&lt;/c-pagination.link&gt;
+  &lt;c-pagination.link page=&quot;2&quot;&gt;2&lt;/c-pagination.link&gt;
+  &lt;c-pagination.link page=&quot;3&quot;&gt;3&lt;/c-pagination.link&gt;
+  &lt;c-pagination.link page=&quot;2&quot;&gt;&amp;raquo;&lt;/c-pagination.link&gt;
+&lt;/c-pagination&gt;</code></pre>
+    </section>
+    <!-- Progress and Spinner -->
+    <section class="mb-5">
+      <h2 class="h4">Progress & Spinner</h2>
+      <div class="mb-3" style="max-width: 28rem;">
+        <c-progress :value="60" :striped="True" :animated="True" />
+        <div class="mt-3">
+          <c-spinner variant="primary" />
+          <c-spinner type="grow" variant="secondary" />
+        </div>
+      </div>
+      <pre><code class="language-html">&lt;c-progress :value=&quot;60&quot; :striped=&quot;True&quot; :animated=&quot;True&quot; /&gt;
+&lt;c-spinner variant=&quot;primary&quot; /&gt;
+&lt;c-spinner type=&quot;grow&quot; variant=&quot;secondary&quot; /&gt;</code></pre>
+    </section>
+    <!-- Tabs -->
+    <section class="mb-5">
+      <h2 class="h4">Tabs</h2>
+      <div class="mb-3">
+        <c-tabs id="demoTabs">
+          <c-tabs.item target="tabOne" active>
+            One
+          </c-tabs.item>
+          <c-tabs.item target="tabTwo">
+            Two
+          </c-tabs.item>
+        </c-tabs>
+        <c-tabs.content>
+          <c-tabs.pane id="tabOne" active show>
+            Tab one content
+          </c-tabs.pane>
+          <c-tabs.pane id="tabTwo">
+            Tab two content
+          </c-tabs.pane>
+        </c-tabs.content>
+      </div>
+      <pre><code class="language-html">&lt;c-tabs id=&quot;demoTabs&quot;&gt;
+  &lt;c-tabs.item target=&quot;tabOne&quot; active&gt;One&lt;/c-tabs.item&gt;
+  &lt;c-tabs.item target=&quot;tabTwo&quot;&gt;Two&lt;/c-tabs.item&gt;
+&lt;/c-tabs&gt;
+&lt;c-tabs.content&gt;
+  &lt;c-tabs.pane id=&quot;tabOne&quot; active show&gt;Tab one content&lt;/c-tabs.pane&gt;
+  &lt;c-tabs.pane id=&quot;tabTwo&quot;&gt;Tab two content&lt;/c-tabs.pane&gt;
+&lt;/c-tabs.content&gt;</code></pre>
+    </section>
+    <!-- Toast -->
+    <section class="mb-5">
+      <h2 class="h4">Toast</h2>
+      <div class="mb-3">
+        <c-toast id="demoToast">
+          <c-toast.header>
+            <strong class="me-auto">Notice</strong>
+          </c-toast.header>
+          <c-toast.body>
+            Hello there
+          </c-toast.body>
+        </c-toast>
+        <c-button class="mt-2"
+                  :attrs="{'onclick':`(function(){const t=new bootstrap.Toast(document.getElementById('demoToast'));t.show();})()`}">
+          Show
+        </c-button>
+      </div>
+      <pre><code class="language-html">&lt;c-toast id=&quot;demoToast&quot;&gt;
+  &lt;c-toast.header&gt;&lt;strong class=&quot;me-auto&quot;&gt;Notice&lt;/strong&gt;&lt;/c-toast.header&gt;
+  &lt;c-toast.body&gt;Hello there&lt;/c-toast.body&gt;
+&lt;/c-toast&gt;
+&lt;c-button class=&quot;mt-2&quot; :attrs=&quot;{'onclick':`(function(){const t=new bootstrap.Toast(document.getElementById('demoToast'));t.show();})()`}&quot;&gt;Show&lt;/c-button&gt;</code></pre>
+    </section>
+    <!-- Table -->
+    <section class="mb-5">
+      <h2 class="h4">Table</h2>
+      <div class="mb-3" style="max-width: 36rem;">
+        <c-table striped hover>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Alice</td>
+              <td>Active</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Bob</td>
+              <td>Invited</td>
+            </tr>
+          </tbody>
+        </c-table>
+      </div>
+      <pre><code class="language-html">&lt;c-table striped hover&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;&lt;th&gt;#&lt;/th&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th&gt;Status&lt;/th&gt;&lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;Alice&lt;/td&gt;&lt;td&gt;Active&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;Bob&lt;/td&gt;&lt;td&gt;Invited&lt;/td&gt;&lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/c-table&gt;</code></pre>
+    </section>
+    <!-- Placeholder & Ratio -->
+    <section class="mb-5">
+      <h2 class="h4">Placeholder & Ratio</h2>
+      <div class="mb-3">
+        <c-placeholder width="12rem" height="2rem" />
+        <div class="mt-3" style="max-width: 24rem;">
+          <c-ratio ratio="16x9">
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                    title="video"
+                    allowfullscreen></iframe>
+          </c-ratio>
+        </div>
+      </div>
+      <pre><code class="language-html">&lt;c-placeholder width=&quot;12rem&quot; height=&quot;2rem&quot; /&gt;
+&lt;c-ratio ratio=&quot;16x9&quot;&gt;
+  &lt;iframe src=&quot;https://www.youtube.com/embed/dQw4w9WgXcQ&quot; title=&quot;video&quot; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/c-ratio&gt;</code></pre>
+    </section>
+    <!-- Input group -->
+    <section class="mb-5">
+      <h2 class="h4">Input group</h2>
+      <div class="mb-3" style="max-width: 28rem;">
+        <c-input_group>
+          <span class="input-group-text">@</span>
+          <c-form.input placeholder="username" />
+        </c-input_group>
+      </div>
+      <pre><code class="language-html">&lt;c-input_group&gt;
+  &lt;span class=&quot;input-group-text&quot;&gt;@&lt;/span&gt;
+  &lt;c-form.input placeholder=&quot;username&quot; /&gt;
+&lt;/c-input_group&gt;</code></pre>
+    </section>
+    <!-- Breadcrumbs -->
+    <section class="mb-5">
+      <h2 class="h4">Breadcrumbs</h2>
+      <div class="mb-3">
+        <c-breadcrumbs>
+          <c-breadcrumbs.item href="#" title="Home" />
+          <c-breadcrumbs.item href="#" title="Library" />
+          <c-breadcrumbs.item title="Data" />
+        </c-breadcrumbs>
+      </div>
+      <pre><code class="language-html">&lt;c-breadcrumbs&gt;
+  &lt;c-breadcrumbs.item href=&quot;#&quot; title=&quot;Home&quot; /&gt;
+  &lt;c-breadcrumbs.item href=&quot;#&quot; title=&quot;Library&quot; /&gt;
+  &lt;c-breadcrumbs.item title=&quot;Data&quot; /&gt;
+&lt;/c-breadcrumbs&gt;</code></pre>
+    </section>
+    <!-- Accordion -->
+    <section class="mb-5">
+      <h2 class="h4">Accordion</h2>
+      <div class="mb-3" style="max-width: 36rem;">
+        <c-accordion>
+          <c-accordion.item>
+            <c-accordion.header target="accOne">
+              Item One
+            </c-accordion.header>
+            <c-accordion.body id="accOne">
+              First item body
+            </c-accordion.body>
+          </c-accordion.item>
+          <c-accordion.item>
+            <c-accordion.header target="accTwo">
+              Item Two
+            </c-accordion.header>
+            <c-accordion.body id="accTwo">
+              Second item body
+            </c-accordion.body>
+          </c-accordion.item>
+        </c-accordion>
+      </div>
+      <pre><code class="language-html">&lt;c-accordion&gt;
+  &lt;c-accordion.item&gt;
+    &lt;c-accordion.header target=&quot;accOne&quot;&gt;Item One&lt;/c-accordion.header&gt;
+    &lt;c-accordion.body id=&quot;accOne&quot;&gt;First item body&lt;/c-accordion.body&gt;
+  &lt;/c-accordion.item&gt;
+  &lt;c-accordion.item&gt;
+    &lt;c-accordion.header target=&quot;accTwo&quot;&gt;Item Two&lt;/c-accordion.header&gt;
+    &lt;c-accordion.body id=&quot;accTwo&quot;&gt;Second item body&lt;/c-accordion.body&gt;
+  &lt;/c-accordion.item&gt;
+&lt;/c-accordion&gt;</code></pre>
+    </section>
+    <!-- Carousel -->
+    <section class="mb-5">
+      <h2 class="h4">Carousel</h2>
+      <div class="mb-3" style="max-width: 32rem;">
+        <c-carousel id="demoCarousel">
+          <c-slot name="indicators">
+            <div class="carousel-indicators">
+              <button type="button"
+                      data-bs-target="#demoCarousel"
+                      data-bs-slide-to="0"
+                      class="active"
+                      aria-current="true"
+                      aria-label="Slide 1"></button>
+              <button type="button"
+                      data-bs-target="#demoCarousel"
+                      data-bs-slide-to="1"
+                      aria-label="Slide 2"></button>
+            </div>
+          </c-slot>
+          <c-carousel.item active>
+            <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100"
+                 width="800"
+                 height="400"
+                 xmlns="http://www.w3.org/2000/svg"
+                 role="img"
+                 aria-label="Placeholder"
+                 preserveAspectRatio="xMidYMid slice"
+                 focusable="false">
+              <rect width="100%" height="100%" fill="#e9ecef"></rect>
+            </svg>
+          </c-carousel.item>
+          <c-carousel.item>
+            <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100"
+                 width="800"
+                 height="400"
+                 xmlns="http://www.w3.org/2000/svg"
+                 role="img"
+                 aria-label="Placeholder"
+                 preserveAspectRatio="xMidYMid slice"
+                 focusable="false">
+              <rect width="100%" height="100%" fill="#dee2e6"></rect>
+            </svg>
+          </c-carousel.item>
+          <c-slot name="controls">
+            <button class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#demoCarousel"
+                    data-bs-slide="prev">
+              <span class="carousel-control-prev-icon"
+                    aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#demoCarousel"
+                    data-bs-slide="next">
+              <span class="carousel-control-next-icon"
+                    aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </c-slot>
+        </c-carousel>
+      </div>
+      <pre><code class="language-html">&lt;c-carousel id=&quot;demoCarousel&quot;&gt;
+  &lt;c-slot name=&quot;indicators&quot;&gt;
+    &lt;div class=&quot;carousel-indicators&quot;&gt;
+      &lt;button type=&quot;button&quot; data-bs-target=&quot;#demoCarousel&quot; data-bs-slide-to=&quot;0&quot; class=&quot;active&quot; aria-current=&quot;true&quot; aria-label=&quot;Slide 1&quot;&gt;&lt;/button&gt;
+      &lt;button type=&quot;button&quot; data-bs-target=&quot;#demoCarousel&quot; data-bs-slide-to=&quot;1&quot; aria-label=&quot;Slide 2&quot;&gt;&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/c-slot&gt;
+  &lt;c-carousel.item active&gt;...&lt;/c-carousel.item&gt;
+  &lt;c-carousel.item&gt;...&lt;/c-carousel.item&gt;
+  &lt;c-slot name=&quot;controls&quot;&gt;
+    &lt;button class=&quot;carousel-control-prev&quot; type=&quot;button&quot; data-bs-target=&quot;#demoCarousel&quot; data-bs-slide=&quot;prev&quot;&gt;
+      &lt;span class=&quot;carousel-control-prev-icon&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+      &lt;span class=&quot;visually-hidden&quot;&gt;Previous&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;button class=&quot;carousel-control-next&quot; type=&quot;button&quot; data-bs-target=&quot;#demoCarousel&quot; data-bs-slide=&quot;next&quot;&gt;
+      &lt;span class=&quot;carousel-control-next-icon&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+      &lt;span class=&quot;visually-hidden&quot;&gt;Next&lt;/span&gt;
+    &lt;/button&gt;
+  &lt;/c-slot&gt;
+&lt;/c-carousel&gt;</code></pre>
+    </section>
+  </div>
+{% endblock content %}

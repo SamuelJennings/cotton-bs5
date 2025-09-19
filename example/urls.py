@@ -5,7 +5,8 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path("", views.StandardLayout.as_view(), name="standard"),
+    path("", views.Home.as_view(), name="home"),
+    path("layout/", views.StandardLayout.as_view(), name="standard"),
     path("sidebars/hide-secondary/", views.SecondarySidebarEmpty.as_view(), name="secondary_empty"),
     path("sidebars/hide-primary/", views.PrimarySidebarEmpty.as_view(), name="primary_empty"),
     path("sidebars/remove-secondary/", views.SecondarySidebarRemoved.as_view(), name="secondary_removed"),
