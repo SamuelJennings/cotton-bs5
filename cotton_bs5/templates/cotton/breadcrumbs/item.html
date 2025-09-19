@@ -1,17 +1,11 @@
-<li class="breadcrumb-item {{ class }}">
+<li class="breadcrumb-item{% if not href %} active{% endif %} {{ class }}">
   {% if href %}
     <a href="{{ href }}"
        class="link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
        {{ attrs }}>
-      {% if icon %}
-        {% icon icon %}
-      {% endif %}
-      {{ title }}{{ slot }}
+      {{ text }}{{ slot }}
     </a>
   {% else %}
-    {% if icon %}
-      {% icon icon %}
-    {% endif %}
-    {{ title }}{{ slot }}
+    {{ text }}{{ slot }}
   {% endif %}
 </li>
