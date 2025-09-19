@@ -1,0 +1,9 @@
+<c-vars id :active="False" :show="False" class />
+<div {% if id %}id="{{ id }}"{% endif %}
+     class="tab-pane{% if active %} active{% endif %}{% if show %} show{% endif %} {{ class }}"
+     role="tabpanel"
+     {% if id %}aria-labelledby="{{ id }}-tab"{% endif %}
+     tabindex="0"
+     {{ attrs }}>
+  {{ slot }}
+</div>

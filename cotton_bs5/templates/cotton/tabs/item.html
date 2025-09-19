@@ -1,0 +1,12 @@
+<c-vars target :active="False" :disabled="False" class />
+<li class="nav-item" role="presentation">
+  <button class="nav-link{% if active %} active{% endif %} {{ class }}"
+          {% if target %} id="{{ target }}-tab" data-bs-toggle="tab" data-bs-target="#{{ target }}" aria-controls="{{ target }}" {% endif %}
+          aria-selected="{% if active %}true{% else %}false{% endif %}"
+          {% if disabled %}disabled{% endif %}
+          type="button"
+          role="tab"
+          {{ attrs }}>
+    {{ slot }}
+  </button>
+</li>

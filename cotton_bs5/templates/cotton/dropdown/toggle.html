@@ -1,0 +1,13 @@
+<c-vars variant="primary"
+        size=""
+        :split="False"
+        :disabled="False"
+        class />
+<button type="button"
+        class="btn{% if not split %} dropdown-toggle{% endif %} btn-{{ variant }}{% if size %} btn-{{ size }}{% endif %} {{ class }}"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+        {% if disabled %}disabled{% endif %}
+        {{ attrs }}>
+  {{ slot }}
+</button>

@@ -1,0 +1,6 @@
+<c-vars type="tabs" fill="" justify="" class />
+<ul class="nav nav-{{ type }}{% if fill %} nav-{{ fill }}{% endif %}{% if justify %} nav-{{ justify }}{% endif %} {{ class }}"
+    role="tablist"
+    {{ attrs }}>
+  {{ slot }}
+</ul>

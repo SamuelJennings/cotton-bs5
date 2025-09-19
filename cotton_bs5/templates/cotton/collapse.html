@@ -1,0 +1,5 @@
+<c-vars :show="False" :horizontal="False" class />
+<div class="collapse{% if horizontal %} collapse-horizontal{% endif %}{% if show %} show{% endif %} {{ class }}"
+     {{ attrs }}>
+  {{ slot }}
+</div>

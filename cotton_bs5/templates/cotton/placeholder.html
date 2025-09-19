@@ -1,0 +1,10 @@
+<c-vars width="" height="" size="" animation="glow" class />
+<div class="placeholder{% if size %} placeholder-{{ size }}{% endif %}{% if animation %} placeholder-{{ animation }}{% endif %} {{ class }}"
+     {% if width %}style="width: {{ width }};"{% endif %}
+     {{ attrs }}>
+  {% if height %}
+    <span class="placeholder col-12"
+          style="height: {{ height }}"></span>
+  {% endif %}
+  {{ slot }}
+</div>

@@ -1,0 +1,6 @@
+<c-vars id :show="False" parent class />
+<div class="accordion-collapse collapse{% if show %} show{% endif %}"
+     {% if parent %}data-bs-parent="#{{ parent }}"{% endif %}
+     {{ attrs }}>
+  <div class="accordion-body {{ class }}">{{ slot }}</div>
+</div>

@@ -1,0 +1,11 @@
+<c-vars type="border"
+        size=""
+        variant=""
+        label="Loading..."
+        class />
+<div class="spinner-{{ type }}{% if size %} spinner-{{ type }}-{{ size }}{% endif %}{% if variant %} text-{{ variant }}{% endif %} {{ class }}"
+     role="status"
+     {{ attrs }}>
+        <span class="visually-hidden">{{ label }}</span>
+        {{ slot }}
+</div>
