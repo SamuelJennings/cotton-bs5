@@ -1,11 +1,12 @@
-<c-vars target :collapsed="True" class />
+<c-vars target text show class />
 <h2 class="accordion-header {{ class }}">
-  <button class="accordion-button{% if collapsed %} collapsed{% endif %}"
+  <button class="accordion-button{% if not show %} collapsed{% endif %}"
           type="button"
           data-bs-toggle="collapse"
-          {% if target %}data-bs-target="#{{ target }}" aria-controls="{{ target }}"{% endif %}
-          {% if collapsed %}aria-expanded="false"{% else %}aria-expanded="true"{% endif %}
+          data-bs-target="#{{ target }}"
+          aria-controls="{{ target }}"
+          {% if show %}aria-expanded="true"{% else %}aria-expanded="false"{% endif %}
           {{ attrs }}>
-    {{ slot }}
+    {{ text }} {{ slot }}
   </button>
 </h2>
