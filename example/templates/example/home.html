@@ -5,6 +5,7 @@
     <div class="row vh-100">
       <div class="col-md-3 h-100 overflow-auto d-none d-md-block">
         <c-list-group flush>
+          <c-list-group.item href="#accordion" text="Accordion" />
           <c-list-group.item href="#alerts" text="Alerts" />
           <c-list-group.item href="#badges" text="Badges" />
           <c-list-group.item href="#buttons" text="Buttons" />
@@ -13,7 +14,6 @@
           <c-list-group.item href="#cards" text="Cards" />
           <c-list-group.item href="#carousel" text="Carousel" />
           <c-list-group.item href="#collapse" text="Collapse" />
-          <c-list-group.item href="#accordion" text="Accordion" />
           <c-list-group.item href="#dropdown" text="Dropdown" />
           <c-list-group.item href="#grid-system" text="Grid System" />
           <c-list-group.item href="#list-group" text="List Group" />
@@ -32,8 +32,10 @@
         </c-list-group>
       </div>
       <div class="col-lg-9 col-12 h-100 overflow-auto">
-        <h1 class="display-4 text-center mb-3">Cotton Bootstrap 5</h1>
-        <p class="lead text-center mb-3">This page demonstrates all available Cotton template components for Bootstrap 5.</p>
+        <div class="text-center mt-4">
+          <h1 class="display-4 mb-3">Cotton Bootstrap 5</h1>
+          <p class="lead mb-3">This page demonstrates all available Cotton template components for Bootstrap 5.</p>
+        </div>
         <!-- Navigation Toggle Button - Only visible on small screens -->
         <div class="d-lg-none position-fixed top-0 start-0 z-2 m-3">
           <c-dropdown>
@@ -42,6 +44,7 @@
                                  :caret="False"
                                  text="☰" />
             </c-slot>
+            <c-dropdown.item href="#accordion" text="Accordion" />
             <c-dropdown.item href="#alerts" text="Alerts" />
             <c-dropdown.item href="#badges" text="Badges" />
             <c-dropdown.item href="#buttons" text="Buttons" />
@@ -50,7 +53,6 @@
             <c-dropdown.item href="#cards" text="Cards" />
             <c-dropdown.item href="#carousel" text="Carousel" />
             <c-dropdown.item href="#collapse" text="Collapse" />
-            <c-dropdown.item href="#accordion" text="Accordion" />
             <c-dropdown.item href="#dropdown" text="Dropdown" />
             <c-dropdown.item href="#grid-system" text="Grid System" />
             <c-dropdown.item href="#list-group" text="List Group" />
@@ -92,15 +94,13 @@
           </c-card>
           <!-- Alerts Section -->
           <c-card id="alerts" title="Alerts">
-            <div class="vstach gap-3">
-              <c-alert variant="primary" text="This is a primary alert!" />
-              <c-alert variant="danger"
-                       text="This is a dismissible danger alert!"
-                       dismissible />
-              <c-alert variant="success">
-                <strong>Success!</strong> This alert has custom markup.
-              </c-alert>
-            </div>
+            <c-alert variant="primary" text="This is a primary alert!" />
+            <c-alert variant="danger"
+                     text="This is a dismissible danger alert!"
+                     dismissible />
+            <c-alert variant="success">
+              <strong>Success!</strong> This alert has custom markup.
+            </c-alert>
           </c-card>
           <!-- Badges Section -->
           <c-card id="badges" title="Badges">
@@ -242,14 +242,40 @@
           </c-card>
           <!-- Dropdown Section -->
           <c-card id="dropdown" title="Dropdown">
-            <c-dropdown>
-              <c-dropdown.toggle variant="secondary" text="Dropdown Button" />
-              <c-dropdown.item href="#action1" text="Action 1" />
-              <c-dropdown.item href="#action2" text="Action 2" />
-              <c-dropdown.divider />
-              <c-dropdown.header text="Dropdown Header" />
-              <c-dropdown.item href="#action3" text="Action 3" />
-            </c-dropdown>
+            <div class="vstack gap-1">
+              <c-dropdown>
+                <c-slot name="button">
+                  <c-dropdown.toggle variant="secondary" text="Dropdown" />
+                </c-slot>
+                <c-dropdown.item href="#action1" text="Action 1" />
+                <c-dropdown.item href="#action2" text="Action 2" />
+                <c-dropdown.divider />
+                <c-dropdown.header text="Dropdown Header" />
+                <c-dropdown.item href="#action3" text="Action 3" />
+              </c-dropdown>
+              <c-dropdown direction="right">
+                <c-slot name="button">
+                  <c-dropdown.toggle variant="secondary"
+                                     text="Dropright"
+                                     :caret="False" />
+                </c-slot>
+                <c-dropdown.item href="#action1" text="Action 1" />
+              </c-dropdown>
+              <c-dropdown direction="up">
+                <c-slot name="button">
+                  <c-dropdown.toggle variant="secondary" text="Dropup" />
+                </c-slot>
+                <c-dropdown.item href="#action1" text="Action 1" />
+              </c-dropdown>
+              <c-dropdown direction="left">
+                <c-slot name="button">
+                  <c-dropdown.toggle class="float-end"
+                                     variant="secondary"
+                                     text="Dropleft" />
+                </c-slot>
+                <c-dropdown.item href="#action1" text="Action 1" />
+              </c-dropdown>
+            </div>
           </c-card>
           <!-- Grid Section -->
           <c-card id="grid-system" title="Grid System">
@@ -506,9 +532,3 @@
     </div>
   </div>
 {% endblock content %}
-<div class="container">
-  <div class="row">
-    <div class="col-md-3 d-none d-md-block"></div>
-    <div class="col-lg-9 col-12"></div>
-  </div>
-</div>

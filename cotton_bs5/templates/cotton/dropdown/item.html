@@ -3,13 +3,13 @@
   <a class="dropdown-item{% if active %} active{% endif %}{% if disabled %} disabled{% endif %} {{ class }}"
      {% if disabled %}tabindex="-1" aria-disabled="true"{% endif %}
      {{ attrs }}>
-    {{ slot }}
+    {{ text }} {{ slot }}
   </a>
 {% else %}
   <button class="dropdown-item{% if active %} active{% endif %}{% if disabled %} disabled{% endif %} {{ class }}"
           type="button"
           {% if disabled %}disabled{% endif %}
           {{ attrs }}>
-    {{ slot }}
+    {{ text }} {{ slot }}
   </button>
 {% endif %}
