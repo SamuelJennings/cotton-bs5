@@ -9,7 +9,7 @@ Bootstrap 5 components for Django Cotton - A comprehensive library of reusable, 
 ## Installation
 
 ```bash
-pip install cotton-bs5
+pip install django-cotton-bs5
 ```
 
 Add `cotton_bs5` to your `INSTALLED_APPS` in `settings.py`:
