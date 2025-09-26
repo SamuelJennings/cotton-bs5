@@ -34,7 +34,6 @@ INSTALLED_APPS = [
     "example",
     "django_cotton",
     "cotton_bs5",
-    "easy_icons",
     "crispy_forms",
     "crispy_bootstrap5",
     # "debug_toolbar",
