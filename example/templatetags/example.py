@@ -53,6 +53,10 @@ class BlockToStringNode(template.Node):
             if line.startswith("</"):
                 level -= 1
             result.append(f"{indent * level}{line}")
-            if line.startswith("<") and not line.startswith("</") and not line.endswith("/>"):
+            if (
+                line.startswith("<")
+                and not line.startswith("</")
+                and not line.endswith("/>")
+            ):
                 level += 1
         return escape("\n".join(result).strip())
