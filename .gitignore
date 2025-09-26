@@ -85,3 +85,6 @@ dist
 #no migration files except __init__.py
 **/migrations/*
 !**/migrations/__init__.py
+.github/instructions/general.instructions.md
+cotton_bs5/static/bd
+cotton_bs5/static/_bootstrap_docs.scss
