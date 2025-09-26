@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load i18n static example %}
+{% load i18n static example cotton %}
 {% block content %}
   <div class="container-fluid">
     <div class="row vh-100">
@@ -42,7 +42,7 @@
             <c-slot name="button">
               <c-dropdown.toggle variant="outline-secondary"
                                  :caret="False"
-                                 text="☰" />
+                                 text="Menu" />
             </c-slot>
             <c-dropdown.item href="#accordion" text="Accordion" />
             <c-dropdown.item href="#alerts" text="Alerts" />
@@ -146,8 +146,13 @@
           <c-card id="button-groups" title="Button Groups">
             <c-button-group>
               <c-button variant="primary" text="Left" />
+              <c-button variant="secondary" text="Middle" />
+              <c-button variant="info" text="Right" />
+            </c-button-group>
+            <c-button-group vertical>
+              <c-button variant="primary" text="Top" />
               <c-button variant="primary" text="Middle" />
-              <c-button variant="primary" text="Right" />
+              <c-button variant="primary" text="Bottom" />
             </c-button-group>
           </c-card>
           <!-- Breadcrumbs Section -->
@@ -229,16 +234,23 @@
             </c-carousel>
           </c-card>
           <!-- Collapse Section -->
-          <c-card id="collapse" title="Collapse">
-            <c-button variant="primary"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseExample"
-                      text="Toggle Collapse" />
-            <c-collapse id="collapseExample">
-              <div class="card card-body mt-2">
-                This is the collapsible content. It's hidden by default and shown when the button is clicked.
-              </div>
-            </c-collapse>
+          <c-card id="collapse"
+                  title="Collapse"
+                  style="min-height: 350px">
+            <div class="vstack gap-1">
+              <c-collapse id="collapseExample" text="Toggle Collapse">
+                <div class="card card-body mt-2">
+                  This is the collapsible content. It's hidden by default and shown when the button is clicked.
+                </div>
+              </c-collapse>
+              <c-collapse id="horizontalCollapse"
+                          text="Toggle Collapse"
+                          horizontal>
+                <div class="card card-body mt-2" style="width:300px;">
+                  This is the collapsible content. It's hidden by default and shown when the button is clicked.
+                </div>
+              </c-collapse>
+            </div>
           </c-card>
           <!-- Dropdown Section -->
           <c-card id="dropdown" title="Dropdown">
@@ -308,27 +320,36 @@
               </c-list-group>
             </c-grid>
           </c-card>
+          <!-- Navbar Section -->
+          <c-card id="navbar" title="Navbar">
+            {% comment %} {% render_document "example/navbar/default.html" as doc %}
+            {{ doc.rendered }}
+            <pre><code>
+            {{ doc.verbatim }}
+            </code></pre> 
+            {% endcomment %}
+            <c-navbar variant="primary" expand="lg" brand="Cotton BS5">
+              <c-navbar.link href="#" active text="Home" />
+              <c-navbar.link href="#" text="Features" />
+              <c-navbar.link href="#" text="Pricing" disabled />
+            </c-navbar>
+          </c-card>
           <!-- Navigation Section -->
           <c-card id="navigation" title="Navigation">
+            <strong>Horizontal</strong>
             <c-nav>
               <c-nav.link href="#" active text="Active" />
               <c-nav.link href="#" text="Link" />
               <c-nav.link href="#" text="Another Link" />
               <c-nav.link href="#" disabled text="Disabled" />
             </c-nav>
-          </c-card>
-          <!-- Navbar Section -->
-          <c-card id="navbar" title="Navbar">
-            <c-navbar variant="dark" bg="dark" expand="lg">
-              <c-slot name="brand">
-                <a class="navbar-brand" href="#">Brand</a>
-              </c-slot>
-              <c-navbar.links>
-                <c-navbar.link_item href="#" active text="Home" />
-                <c-navbar.link_item href="#" text="Features" />
-                <c-navbar.link_item href="#" text="Pricing" />
-              </c-navbar.links>
-            </c-navbar>
+            <strong>Vertical</strong>
+            <c-nav vertical>
+              <c-nav.link href="#" active text="Active" />
+              <c-nav.link href="#" text="Link" />
+              <c-nav.link href="#" text="Another Link" />
+              <c-nav.link href="#" disabled text="Disabled" />
+            </c-nav>
           </c-card>
           <!-- Modal Section -->
           <c-card id="modals-offcanvas" title="Modals & Offcanvas">
@@ -469,37 +490,39 @@
           <!-- Tabs Section -->
           <c-card id="tabs" header="Tabs">
             <c-tabs id="myTabs" type="tabs" fill justify>
-              <c-tabs.item target="#home" text="Home" active />
-              <c-tabs.item target="#profile" text="Profile" />
-              <c-tabs.item target="#contact" text="Contact" />
+              <c-tabs.item target="home" text="Home" active />
+              <c-tabs.item target="profile" text="Profile" />
+              <c-tabs.item target="contact" text="Contact" />
             </c-tabs>
             <c-tabs.content>
-              <c-tabs.pane id="home" tab="home-tab" active>
+              <c-tabs.pane id="home" active>
                 This is the home tab content. It contains information about the home section.
               </c-tabs.pane>
-              <c-tabs.pane id="profile" tab="profile-tab">
+              <c-tabs.pane id="profile">
                 This is the profile tab content. Here you would find profile-related information.
               </c-tabs.pane>
-              <c-tabs.pane id="contact" tab="contact-tab">
+              <c-tabs.pane id="contact">
                 This is the contact tab content. Contact information and forms would go here.
               </c-tabs.pane>
             </c-tabs.content>
-            <c-tabs id="verticalTabs" type="pills" vertical>
-              <c-tabs.item target="#home" text="Home" active />
-              <c-tabs.item target="#profile" text="Profile" />
-              <c-tabs.item target="#contact" text="Contact" />
-            </c-tabs>
-            <c-tabs.content>
-              <c-tabs.pane id="home" tab="home-tab" active>
-                This is the home tab content. It contains information about the home section.
-              </c-tabs.pane>
-              <c-tabs.pane id="profile" tab="profile-tab">
-                This is the profile tab content. Here you would find profile-related information.
-              </c-tabs.pane>
-              <c-tabs.pane id="contact" tab="contact-tab">
-                This is the contact tab content. Contact information and forms would go here.
-              </c-tabs.pane>
-            </c-tabs.content>
+            <div class="d-flex mt-3">
+              <c-tabs id="verticalTabs" type="pills" vertical>
+                <c-tabs.item target="vhome" text="Home" active />
+                <c-tabs.item target="vprofile" text="Profile" />
+                <c-tabs.item target="vcontact" text="Contact" />
+              </c-tabs>
+              <c-tabs.content>
+                <c-tabs.pane id="vhome" active>
+                  This is the home tab content. It contains information about the home section.
+                </c-tabs.pane>
+                <c-tabs.pane id="vprofile">
+                  This is the profile tab content. Here you would find profile-related information.
+                </c-tabs.pane>
+                <c-tabs.pane id="vcontact">
+                  This is the contact tab content. Contact information and forms would go here.
+                </c-tabs.pane>
+              </c-tabs.content>
+            </div>
           </c-card>
           <!-- Toast Section -->
           <c-card id="toast" header="Toast">
