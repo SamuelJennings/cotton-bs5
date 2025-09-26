@@ -9,13 +9,15 @@ from invoke import task
 def docs(c):
     # Start Django dev server
     server = subprocess.Popen(
-        ["poetry", "run", "python", "manage.py", "runserver", "8001"], stdout=subprocess.PIPE, stderr=subprocess.PIPE
+        ["poetry", "run", "python", "manage.py", "runserver", "8001"],  # noqa: S607
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
     )
     try:
         # Wait for the server to start
         for _ in range(20):
             try:
-                resp = requests.get("http://localhost:8001/")
+                resp = requests.get("http://localhost:8001/")  # noqa: S113
                 if resp.status_code == 200:
                     break
             except Exception:
@@ -78,7 +80,9 @@ def prerelease(c):
 
     print("\n" + "=" * 60)
     print("✅ Pre-release checks completed successfully!")
-    print("🎉 Repository is ready for release. You can now run 'invoke release' with the appropriate rule.")
+    print(
+        "🎉 Repository is ready for release. You can now run 'invoke release' with the appropriate rule."
+    )
     print("   Example: invoke release --rule=patch")
 
 
@@ -121,7 +125,9 @@ def release(c, rule="", commit_staged=False):
             print(f"🚀 Committing staged changes and version bump for v{version_short}")
             c.run(f'git add pyproject.toml && git commit -m "Release v{version_short}"')
         else:
-            print(f"🚀 No staged changes found, committing only version bump for v{version_short}")
+            print(
+                f"🚀 No staged changes found, committing only version bump for v{version_short}"
+            )
             c.run(f'git commit pyproject.toml -m "Release v{version_short}"')
     else:
         c.run(f'git commit pyproject.toml -m "Release v{version_short}"')
