@@ -56,4 +56,3 @@ This library follows django-cotton conventions and Bootstrap 5 standards. When a
 ## License
 
 MIT License - see [LICENSE](LICENSE) file for details.
-
