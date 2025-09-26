@@ -1,4 +1,4 @@
-<c-vars :active="False" :disabled="False" class />
+<c-vars href text active disabled class />
 {% if href %}
   <a class="dropdown-item{% if active %} active{% endif %}{% if disabled %} disabled{% endif %} {{ class }}"
      {% if disabled %}tabindex="-1" aria-disabled="true"{% endif %}

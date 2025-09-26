@@ -3,6 +3,7 @@
         :caret="True"
         split
         disabled
+        text
         class />
 <button type="button"
         class="btn{% if caret %} dropdown-toggle{% endif %} btn-{{ variant }}{% if size %} btn-{{ size }}{% endif %} {{ class }}"
@@ -10,5 +11,5 @@
         aria-expanded="false"
         {% if disabled %}disabled{% endif %}
         {{ attrs }}>
-        {{ text }}  {{ slot }}
+        {{ text }} {{ slot }}
 </button>

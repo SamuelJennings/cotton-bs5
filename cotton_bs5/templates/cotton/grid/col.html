@@ -1,10 +1,5 @@
-<c-vars cols=""
-        :auto="False"
-        :responsive="{}"
-        order=""
-        offset=""
-        class />
-<div class=" {% if auto %} col-auto {% elif cols %} col-{{ cols }} {% else %} col {% endif %} {% for bp, cols in responsive.items %} col-{{ bp }}{% if cols != 'auto' %}-{{ cols }}{% endif %} {% endfor %} {% if order %}order-{{ order }}{% endif %} {% if offset %}offset-{{ offset }}{% endif %} {{ class }} "
+<c-vars width="" :responsive="{}" offset="" class />
+<div class="{% if width %}col-{{ width }} {% else %} col {% endif %} {% for bp, width in responsive.items %}col-{{ bp }}-{{ width }}{% endfor %} {{ class }}"
      {{ attrs }}>
-  {{ slot }}
+        {{ slot }}
 </div>

@@ -1,10 +1,4 @@
 <c-vars text />
 <li>
-  <h6 class="dropdown-header">
-    {% if text %}
-      {{ text }}
-    {% else %}
-      {{ slot }}
-    {% endif %}
-  </h6>
+  <h6 class="dropdown-header">{{ text }}{{ slot }}</h6>
 </li>

@@ -1,9 +1,11 @@
-<c-vars id :active="False" :show="False" class />
-<div {% if id %}id="{{ id }}"{% endif %}
+<c-vars id active show class />
+{# djlint:off #}
+<div id="{{ id }}"
      class="tab-pane{% if active %} active{% endif %}{% if show %} show{% endif %} {{ class }}"
      role="tabpanel"
-     {% if id %}aria-labelledby="{{ id }}-tab"{% endif %}
-     tabindex="0"
+     aria-labelledby="{{ id }}-tab"
+     tabindex="{% if active %}0{% else %}-1{% endif %}"
      {{ attrs }}>
   {{ slot }}
 </div>
+{# djlint:on #}

@@ -1,11 +1,6 @@
-<c-vars variant="primary"
-        element="span"
-        :pill="False"
-        text
-        class />
+<c-vars variant="primary" element="span" pill text class />
 <{{ element }} class="badge text-bg-{{ variant }}
 {% if pill %}rounded-pill{% endif %}
 {{ class }}" {{ attrs }}>
-{% if text %}{{ text }}{% endif %}
-{{ slot }}
+{{ text }}{{ slot }}
 </{{ element }}>

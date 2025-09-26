@@ -1,14 +1,17 @@
+{% load i18n %}
 <c-vars value
         :min="0"
         :max="100"
         text
+        label
         variant="primary"
         striped
         animated
         class />
+{% trans "Progress" as default_label %}
 <div class="progress {{ class }}"
      role="progressbar"
-     aria-label="{{ label }}"
+     aria-label="{% firstof label default_label %}"
      aria-valuenow="{{ value }}"
      aria-valuemin="{{ min }}"
      aria-valuemax="{{ max }}"

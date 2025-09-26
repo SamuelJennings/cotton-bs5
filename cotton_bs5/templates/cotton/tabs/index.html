@@ -1,6 +1,13 @@
-<c-vars type="tabs" fill="" justify="" class />
-<ul class="nav nav-{{ type }}{% if fill %} nav-{{ fill }}{% endif %}{% if justify %} nav-{{ justify }}{% endif %} {{ class }}"
+<c-vars type vertical fill justify class />
+{# djlint:off #}
+<ul class="nav {% if type %}nav-{{ type }}{% endif %} 
+           {% if fill %}nav-fill{% endif %}
+           {% if justify %} nav-justify{% endif %}
+           {% if vertical %} flex-column{% endif %}
+           {{ class }}"
     role="tablist"
+    {% if vertical %} aria-orientation="vertical"{% endif %}
     {{ attrs }}>
   {{ slot }}
 </ul>
+{# djlint:on #}

@@ -1,5 +1,5 @@
-<c-vars :show_close="True" class />
+<c-vars text class />
 <div class="offcanvas-header {{ class }}" {{ attrs }}>
   {{ slot }}
-  <c-button.dismiss dismiss="offcanvas" />
+  <c-button.dismiss dismiss="offcanvas" data-bs-target="#{{ id }}" />
 </div>

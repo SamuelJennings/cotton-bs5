@@ -1,11 +1,6 @@
-<c-vars expand="lg"
-        placement="top"
-        :fixed="False"
-        :sticky="False"
-        brand=""
-        brand_href="/"
-        class />
-<nav class="navbar{% if expand %} navbar-expand-{{ expand }}{% endif %}{% if fixed %} fixed-{{ placement }}{% elif sticky %} sticky-{{ placement }}{% endif %} {{ class }}"
+{% load i18n %}
+<c-vars expand="lg" brand brand_href="/" class />
+<nav class="navbar{% if expand %} navbar-expand-{{ expand }}{% endif %} {{ class }}"
      {{ attrs }}>
   <div class="container-fluid">
     {% if brand %}<a class="navbar-brand" href="{{ brand_href }}">{{ brand }}</a>{% endif %}
@@ -16,10 +11,14 @@
               data-bs-target="#navbarNav"
               aria-controls="navbarNav"
               aria-expanded="false"
-              aria-label="Toggle navigation">
+              aria-label="{% trans "Toggle navigation" %}">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">{{ slot }}</div>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <c-navbar.links>
+          {{ slot }}
+        </c-navbar.links>
+      </div>
     {% else %}
       {{ slot }}
     {% endif %}

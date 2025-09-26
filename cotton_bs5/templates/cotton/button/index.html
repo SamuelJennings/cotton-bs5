@@ -1,9 +1,4 @@
-<c-vars variant="primary"
-        size=""
-        outline=""
-        text
-        icon
-        class />
+<c-vars variant="primary" size="" outline="" text class />
 {# djlint:off #}
 <{% if href %}a{% else %}button{% endif %}
   class="btn {% if outline %} btn-outline-{{ variant }}{% else %} btn-{{ variant }}{% endif %}
@@ -13,7 +8,6 @@
 {% if slot %}
   {{ slot }}
 {% else %}
-  {% if icon %}{{ icon }}{% endif %}
   {{ text }}
 {% endif %}
 {# djlint:off #}
