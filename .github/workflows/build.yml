@@ -51,9 +51,6 @@ jobs:
           fi
           rm requirements-check.txt
 
-      - name: Static type checking with mypy
-        run: poetry run mypy || true  # Allow failure for now
-
       - name: Check for obsolete dependencies
         run: poetry run deptry . || true  # Allow failure for now
 

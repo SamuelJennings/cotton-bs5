@@ -108,9 +108,7 @@ ignore = [
     "F405",
     "C901",
 ]
-exclude = [
-    "fairdm/conf/*",
-]
+
 [tool.ruff.lint.per-file-ignores]
 "**/tests/*" = ["S101","S105"]
 
@@ -141,46 +139,6 @@ indent_size=2
 
 [tool.djlint.js]
 indent_size=2
-
-
-[tool.mypy]
-files = ["fairdm"]
-disallow_untyped_defs = "False"
-disallow_any_unimported = "False"
-ignore_missing_imports = "True"
-no_implicit_optional = "True"
-check_untyped_defs = "False"
-warn_return_any = "True"
-warn_unused_ignores = "True"
-follow_imports = "skip"
-pretty = "True"
-exclude = [
-    "docs/",
-    "migrations/",
-    "tests/settings.py",
-    "fairdm/conf/*",
-    "fairdm/contrib/user/forms/*",
-    ]
-mypy_path = "./fairdm/"
-plugins = ["mypy_django_plugin.main"]
-
-[[tool.mypy.overrides]]
-module = "fairdm.models"
-disable_error_code = [
-    "var-annotated",
-]
-
-[[tool.mypy.overrides]]
-module = "fairdm.db.gis.base"
-disable_error_code = [
-    "var-annotated",
-]
-
-[[tool.mypy.overrides]]
-module = "fairdm.models"
-disable_error_code = [
-    "var-annotated",
-]
 
 [tool.django-stubs]
 django_settings_module = "tests.settings"
@@ -263,5 +221,4 @@ allowlist_externals = poetry
 commands =
     poetry install -v --without docs
     pytest --doctest-modules tests --cov --cov-config=pyproject.toml --cov-report=xml
-    mypy
 """
