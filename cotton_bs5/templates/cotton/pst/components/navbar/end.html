@@ -1,7 +1,0 @@
-<c-vars location="navbar" />
-{% if theme_options.navbar_end or slot %}
-  <div class="{{ location }}-header-items__end {{ class }}">
-    {{ slot }}
-    <c-pst.components.navbar.items :nav_items="theme_options.navbar_end" />
-  </div>
-{% endif %}

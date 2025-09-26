@@ -1,0 +1,557 @@
+{% extends "base.html" %}
+{% load i18n static example cotton %}
+{% block content %}
+  <div class="container-fluid">
+    <div class="row vh-100">
+      <div class="col-md-3 h-100 overflow-auto d-none d-md-block">
+        <c-list-group flush>
+          <c-list-group.item href="#accordion" text="Accordion" />
+          <c-list-group.item href="#alerts" text="Alerts" />
+          <c-list-group.item href="#badges" text="Badges" />
+          <c-list-group.item href="#buttons" text="Buttons" />
+          <c-list-group.item href="#button-groups" text="Button Groups" />
+          <c-list-group.item href="#breadcrumbs" text="Breadcrumbs" />
+          <c-list-group.item href="#cards" text="Cards" />
+          <c-list-group.item href="#carousel" text="Carousel" />
+          <c-list-group.item href="#collapse" text="Collapse" />
+          <c-list-group.item href="#dropdown" text="Dropdown" />
+          <c-list-group.item href="#grid-system" text="Grid System" />
+          <c-list-group.item href="#list-group" text="List Group" />
+          <c-list-group.item href="#navigation" text="Navigation" />
+          <c-list-group.item href="#navbar" text="Navbar" />
+          <c-list-group.item href="#modals-offcanvas"
+                             text="Modals & Offcanvas" />
+          <c-list-group.item href="#pagination" text="Pagination" />
+          <c-list-group.item href="#progress" text="Progress" />
+          <c-list-group.item href="#placeholder" text="Placeholder" />
+          <c-list-group.item href="#ratio" text="Ratio" />
+          <c-list-group.item href="#spinner" text="Spinner" />
+          <c-list-group.item href="#table" text="Table" />
+          <c-list-group.item href="#tabs" text="Tabs" />
+          <c-list-group.item href="#toast" text="Toast" />
+        </c-list-group>
+      </div>
+      <div class="col-lg-9 col-12 h-100 overflow-auto">
+        <div class="text-center mt-4">
+          <h1 class="display-4 mb-3">Cotton Bootstrap 5</h1>
+          <p class="lead mb-3">This page demonstrates all available Cotton template components for Bootstrap 5.</p>
+        </div>
+        <!-- Navigation Toggle Button - Only visible on small screens -->
+        <div class="d-lg-none position-fixed top-0 start-0 z-2 m-3">
+          <c-dropdown>
+            <c-slot name="button">
+              <c-dropdown.toggle variant="outline-secondary"
+                                 :caret="False"
+                                 text="Menu" />
+            </c-slot>
+            <c-dropdown.item href="#accordion" text="Accordion" />
+            <c-dropdown.item href="#alerts" text="Alerts" />
+            <c-dropdown.item href="#badges" text="Badges" />
+            <c-dropdown.item href="#buttons" text="Buttons" />
+            <c-dropdown.item href="#button-groups" text="Button Groups" />
+            <c-dropdown.item href="#breadcrumbs" text="Breadcrumbs" />
+            <c-dropdown.item href="#cards" text="Cards" />
+            <c-dropdown.item href="#carousel" text="Carousel" />
+            <c-dropdown.item href="#collapse" text="Collapse" />
+            <c-dropdown.item href="#dropdown" text="Dropdown" />
+            <c-dropdown.item href="#grid-system" text="Grid System" />
+            <c-dropdown.item href="#list-group" text="List Group" />
+            <c-dropdown.item href="#navigation" text="Navigation" />
+            <c-dropdown.item href="#navbar" text="Navbar" />
+            <c-dropdown.item href="#modals-offcanvas"
+                             text="Modals & Offcanvas" />
+            <c-dropdown.item href="#pagination" text="Pagination" />
+            <c-dropdown.item href="#progress" text="Progress" />
+            <c-dropdown.item href="#placeholder" text="Placeholder" />
+            <c-dropdown.item href="#ratio" text="Ratio" />
+            <c-dropdown.item href="#spinner" text="Spinner" />
+            <c-dropdown.item href="#table" text="Table" />
+            <c-dropdown.item href="#tabs" text="Tabs" />
+            <c-dropdown.item href="#toast" text="Toast" />
+          </c-dropdown>
+        </div>
+        <div class="vstack gap-4">
+          <!-- Accordion Section -->
+          <c-card id="accordion" title="Accordion">
+            <c-accordion id="accordionExample">
+              <c-accordion.item text="Accordion Item #1"
+                                target="collapse1"
+                                parent="accordionExample"
+                                show>
+                <strong>This is the first item's accordion body.</strong> It is shown by default.
+              </c-accordion.item>
+              <c-accordion.item text="Accordion Item #2"
+                                target="collapse2"
+                                parent="accordionExample">
+                <strong>This is the second item's accordion body.</strong> It is hidden by default.
+              </c-accordion.item>
+              <c-accordion.item text="Accordion Item #3"
+                                target="collapse3"
+                                parent="accordionExample">
+                <strong>This is the third item's accordion body.</strong> It is also hidden by default.
+              </c-accordion.item>
+            </c-accordion>
+          </c-card>
+          <!-- Alerts Section -->
+          <c-card id="alerts" title="Alerts">
+            <c-alert variant="primary" text="This is a primary alert!" />
+            <c-alert variant="danger"
+                     text="This is a dismissible danger alert!"
+                     dismissible />
+            <c-alert variant="success">
+              <strong>Success!</strong> This alert has custom markup.
+            </c-alert>
+          </c-card>
+          <!-- Badges Section -->
+          <c-card id="badges" title="Badges">
+            <div class="d-flex flex-wrap gap-2 mb-3">
+              <c-badge variant="primary" text="Primary" />
+              <c-badge variant="secondary" text="Secondary" />
+              <c-badge variant="success" text="Success" />
+              <c-badge variant="danger" text="Danger" />
+              <c-badge variant="warning" text="Warning" />
+              <c-badge variant="info" text="Info" />
+              <c-badge variant="light" text="Light" />
+              <c-badge variant="dark" text="Dark" />
+            </div>
+            <div class="d-flex flex-wrap gap-2">
+              <c-badge variant="primary" pill text="Pill Primary" />
+              <c-badge variant="success" pill text="Pill Success" />
+              <c-badge variant="danger" pill text="Pill Danger" />
+            </div>
+          </c-card>
+          <!-- Buttons Section -->
+          <c-card id="buttons" title="Buttons">
+            <div class="d-flex flex-wrap gap-2 mb-3">
+              <c-button variant="primary" text="Primary Button" />
+              <c-button variant="secondary" text="Secondary Button" />
+              <c-button variant="success" text="Success Button" />
+              <c-button variant="danger" text="Danger Button" />
+              <c-button variant="warning" text="Warning Button" />
+              <c-button variant="info" text="Info Button" />
+            </div>
+            <div class="d-flex flex-wrap gap-2 mb-3">
+              <c-button variant="outline-primary" text="Outline Primary" />
+              <c-button variant="outline-secondary"
+                        text="Outline Secondary" />
+              <c-button variant="outline-success" text="Outline Success" />
+            </div>
+            <div class="d-flex flex-wrap gap-2">
+              <c-button size="sm" variant="primary" text="Small Button" />
+              <c-button variant="primary" text="Normal Button" />
+              <c-button size="lg" variant="primary" text="Large Button" />
+            </div>
+          </c-card>
+          <!-- Button Groups Section -->
+          <c-card id="button-groups" title="Button Groups">
+            <c-button-group>
+              <c-button variant="primary" text="Left" />
+              <c-button variant="secondary" text="Middle" />
+              <c-button variant="info" text="Right" />
+            </c-button-group>
+            <c-button-group vertical>
+              <c-button variant="primary" text="Top" />
+              <c-button variant="primary" text="Middle" />
+              <c-button variant="primary" text="Bottom" />
+            </c-button-group>
+          </c-card>
+          <!-- Breadcrumbs Section -->
+          <c-card id="breadcrumbs" title="Breadcrumbs">
+            <c-breadcrumbs>
+              <c-breadcrumbs.item href="#" text="Home" />
+              <c-breadcrumbs.item href="#" text="Library" />
+              <c-breadcrumbs.item active text="Data" />
+            </c-breadcrumbs>
+            <c-breadcrumbs divider=">">
+              <c-breadcrumbs.item href="/" text="Home" />
+              <c-breadcrumbs.item href="/library" text="Library" />
+              <c-breadcrumbs.item active text="Data" />
+            </c-breadcrumbs>
+          </c-card>
+          <!-- Cards Section -->
+          <c-card id="cards" title="Cards">
+            <c-grid cols="3" gap="3">
+              <c-grid.col>
+                <c-card minimal>
+                  <c-card.header text="Card Header" />
+                  <c-card.body>
+                    <c-card.title text="Card Title" />
+                    <p class="card-text">This is a basic card with header, body, and footer sections.</p>
+                    <c-button variant="primary" text="Go somewhere" />
+                  </c-card.body>
+                  <c-card.footer>
+                    <small class="text-muted">Last updated 3 mins ago</small>
+                  </c-card.footer>
+                </c-card>
+              </c-grid.col>
+              <c-grid.col>
+                <c-card>
+                  <c-card.body>
+                    <h5 class="card-title">Simple Card</h5>
+                    <p class="card-text">This is a simple card with just a body section.</p>
+                    <c-button variant="success" text="Action" />
+                  </c-card.body>
+                </c-card>
+              </c-grid.col>
+              <c-grid.col>
+                <c-card border="primary">
+                  <h5 class="card-title text-primary">Primary Border</h5>
+                  <p class="card-text">This card has a primary border.</p>
+                </c-card>
+              </c-grid.col>
+            </c-grid>
+          </c-card>
+          <!-- Carousel Section -->
+          <c-card id="carousel" title="Carousel">
+            <c-carousel id="demoCarousel">
+              <c-carousel.item active>
+                <div style="height: 300px;
+                            background: linear-gradient(45deg, #007bff, #6f42c1)"
+                     class="d-flex align-items-center justify-content-center">
+                  <c-carousel.caption>
+                    <h5 class="text-white">First Slide</h5>
+                  </c-carousel.caption>
+                </div>
+              </c-carousel.item>
+              <c-carousel.item>
+                <div style="height: 300px;
+                            background: linear-gradient(45deg, #28a745, #20c997)"
+                     class="d-flex align-items-center justify-content-center">
+                  <c-carousel.caption>
+                    <h5 class="text-white">Second Slide</h5>
+                  </c-carousel.caption>
+                </div>
+              </c-carousel.item>
+              <c-carousel.item>
+                <div style="height: 300px;
+                            background: linear-gradient(45deg, #dc3545, #fd7e14)"
+                     class="d-flex align-items-center justify-content-center">
+                  <c-carousel.caption>
+                    <h5 class="text-white">Third Slide</h5>
+                  </c-carousel.caption>
+                </div>
+              </c-carousel.item>
+            </c-carousel>
+          </c-card>
+          <!-- Collapse Section -->
+          <c-card id="collapse"
+                  title="Collapse"
+                  style="min-height: 350px">
+            <div class="vstack gap-1">
+              <c-collapse id="collapseExample" text="Toggle Collapse">
+                <div class="card card-body mt-2">
+                  This is the collapsible content. It's hidden by default and shown when the button is clicked.
+                </div>
+              </c-collapse>
+              <c-collapse id="horizontalCollapse"
+                          text="Toggle Collapse"
+                          horizontal>
+                <div class="card card-body mt-2" style="width:300px;">
+                  This is the collapsible content. It's hidden by default and shown when the button is clicked.
+                </div>
+              </c-collapse>
+            </div>
+          </c-card>
+          <!-- Dropdown Section -->
+          <c-card id="dropdown" title="Dropdown">
+            <div class="vstack gap-1">
+              <c-dropdown>
+                <c-slot name="button">
+                  <c-dropdown.toggle variant="secondary" text="Dropdown" />
+                </c-slot>
+                <c-dropdown.item href="#action1" text="Action 1" />
+                <c-dropdown.item href="#action2" text="Action 2" />
+                <c-dropdown.divider />
+                <c-dropdown.header text="Dropdown Header" />
+                <c-dropdown.item href="#action3" text="Action 3" />
+              </c-dropdown>
+              <c-dropdown direction="right">
+                <c-slot name="button">
+                  <c-dropdown.toggle variant="secondary"
+                                     text="Dropright"
+                                     :caret="False" />
+                </c-slot>
+                <c-dropdown.item href="#action1" text="Action 1" />
+              </c-dropdown>
+              <c-dropdown direction="up">
+                <c-slot name="button">
+                  <c-dropdown.toggle variant="secondary" text="Dropup" />
+                </c-slot>
+                <c-dropdown.item href="#action1" text="Action 1" />
+              </c-dropdown>
+              <c-dropdown direction="left">
+                <c-slot name="button">
+                  <c-dropdown.toggle class="float-end"
+                                     variant="secondary"
+                                     text="Dropleft" />
+                </c-slot>
+                <c-dropdown.item href="#action1" text="Action 1" />
+              </c-dropdown>
+            </div>
+          </c-card>
+          <!-- Grid Section -->
+          <c-card id="grid-system" title="Grid System">
+            <c-grid>
+              <c-grid.col cols="12" md="6" lg="4" class="mb-3">
+                <div class="bg-primary text-white p-3 text-center">Col 1</div>
+              </c-grid.col>
+              <c-grid.col cols="12" md="6" lg="4" class="mb-3">
+                <div class="bg-secondary text-white p-3 text-center">Col 2</div>
+              </c-grid.col>
+              <c-grid.col cols="12" md="12" lg="4" class="mb-3">
+                <div class="bg-success text-white p-3 text-center">Col 3</div>
+              </c-grid.col>
+            </c-grid>
+          </c-card>
+          <!-- List Group Section -->
+          <c-card id="list-group" title="List Group">
+            <c-grid cols="2" gap="3">
+              <c-list-group>
+                <c-list-group.item text="First item" />
+                <c-list-group.item active text="Active item" />
+                <c-list-group.item text="Third item" />
+                <c-list-group.item disabled text="Disabled item" />
+              </c-list-group>
+              <c-list-group>
+                <c-list-group.item href="#" variant="primary" text="Primary item" />
+                <c-list-group.item href="#" variant="success" text="Success item" />
+                <c-list-group.item href="#" variant="danger" text="Danger item" />
+                <c-list-group.item href="#" variant="warning" text="Warning item" />
+              </c-list-group>
+            </c-grid>
+          </c-card>
+          <!-- Navbar Section -->
+          <c-card id="navbar" title="Navbar">
+            {% comment %} {% render_document "example/navbar/default.html" as doc %}
+            {{ doc.rendered }}
+            <pre><code>
+            {{ doc.verbatim }}
+            </code></pre>
+            {% endcomment %}
+            <c-navbar variant="primary" expand="lg" brand="Cotton BS5">
+              <c-navbar.link href="#" active text="Home" />
+              <c-navbar.link href="#" text="Features" />
+              <c-navbar.link href="#" text="Pricing" disabled />
+            </c-navbar>
+          </c-card>
+          <!-- Navigation Section -->
+          <c-card id="navigation" title="Navigation">
+            <strong>Horizontal</strong>
+            <c-nav>
+              <c-nav.link href="#" active text="Active" />
+              <c-nav.link href="#" text="Link" />
+              <c-nav.link href="#" text="Another Link" />
+              <c-nav.link href="#" disabled text="Disabled" />
+            </c-nav>
+            <strong>Vertical</strong>
+            <c-nav vertical>
+              <c-nav.link href="#" active text="Active" />
+              <c-nav.link href="#" text="Link" />
+              <c-nav.link href="#" text="Another Link" />
+              <c-nav.link href="#" disabled text="Disabled" />
+            </c-nav>
+          </c-card>
+          <!-- Modal Section -->
+          <c-card id="modals-offcanvas" title="Modals & Offcanvas">
+            <c-button variant="primary"
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModal"
+                      text="Launch Demo Modal" />
+            <c-modal id="exampleModal">
+              <c-modal.header>
+                <c-modal.title text="Modal Title" />
+              </c-modal.header>
+              <c-modal.body>
+                <p>This is the modal body content. You can put any content here.</p>
+                <p>Modals are used to display important information or forms in an overlay.</p>
+              </c-modal.body>
+              <c-modal.footer>
+                <c-button variant="secondary"
+                          data-bs-dismiss="modal"
+                          text="Close" />
+                <c-button variant="primary" text="Save Changes" />
+              </c-modal.footer>
+            </c-modal>
+            <c-button variant="primary"
+                      data-bs-toggle="offcanvas"
+                      data-bs-target="#offcanvasExample"
+                      text="Toggle Offcanvas" />
+            <c-offcanvas id="offcanvasExample" placement="start">
+              <c-offcanvas.header>
+                <c-offcanvas.title title="Offcanvas Title" />
+              </c-offcanvas.header>
+              <c-offcanvas.body>
+                <p>This is the offcanvas content. It slides in from the side.</p>
+                <p>Offcanvas components are great for navigation menus and side panels.</p>
+              </c-offcanvas.body>
+              <c-offcanvas.footer>
+                <c-button variant="outline-secondary"
+                          data-bs-dismiss="offcanvas"
+                          text="Close" />
+              </c-offcanvas.footer>
+            </c-offcanvas>
+          </c-card>
+          <!-- Pagination Section -->
+          <c-card id="pagination" title="Pagination">
+            <c-pagination>
+              <c-pagination.link href="#" disabled text="Previous" />
+              <c-pagination.link href="#" active text="1" />
+              <c-pagination.link href="#" text="2" />
+              <c-pagination.link href="#" text="3" />
+              <c-pagination.link href="#" text="Next" />
+            </c-pagination>
+          </c-card>
+          <!-- Progress Section -->
+          <c-card id="progress" title="Progress">
+            <div class="vstack gap-2">
+              <c-progress value="40" text="value=40" />
+              <c-progress value="50"
+                          striped
+                          variant="warning"
+                          text="value=50, striped, variant='warning'" />
+              <c-progress min="10"
+                          max="20"
+                          value="17"
+                          variant="danger"
+                          text="min=10, max=20, value=17, variant=danger" />
+              <c-progress value="100"
+                          variant="success"
+                          striped
+                          animated
+                          text="value=100, variant='success', striped, animated" />
+            </div>
+          </c-card>
+          <!-- Placeholder Section -->
+          <c-card id="placeholder" title="Placeholder">
+            <c-placeholder width="9" glow />
+            <c-placeholder width="6" size="lg" wave />
+            <c-placeholder variant="primary" />
+          </c-card>
+          <!-- Ratio Section -->
+          <c-card id="ratio" title="Ratio">
+            <c-grid cols="2" gap="3">
+              <c-grid.col>
+                <c-ratio w="16" h="9">
+                  <div style="background: linear-gradient(45deg, #007bff, #6f42c1)"
+                       class="d-flex align-items-center justify-content-center text-white">w=16, h=9</div>
+                </c-ratio>
+              </c-grid.col>
+              <c-grid.col>
+                <c-ratio perc="70%">
+                  <div style="background: linear-gradient(45deg, #28a745, #20c997)"
+                       class="d-flex align-items-center justify-content-center text-white">70%</div>
+                </c-ratio>
+              </c-grid.col>
+            </c-grid>
+          </c-card>
+          <!-- Spinner Section -->
+          <c-card id="spinner" title="Spinner">
+            <div class="d-flex gap-3 align-items-center">
+              <c-spinner />
+              <c-spinner variant="primary" />
+              <c-spinner variant="success" />
+              <c-spinner variant="danger" type="grow" />
+              <c-spinner variant="warning" type="grow" />
+            </div>
+          </c-card>
+          <!-- Table Section -->
+          <c-card id="table" header="Table">
+            <c-table striped hover>
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">First</th>
+                  <th scope="col">Last</th>
+                  <th scope="col">Handle</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Jacob</td>
+                  <td>Thornton</td>
+                  <td>@fat</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>Larry</td>
+                  <td>the Bird</td>
+                  <td>@twitter</td>
+                </tr>
+              </tbody>
+            </c-table>
+          </c-card>
+          <!-- Tabs Section -->
+          <c-card id="tabs" header="Tabs">
+            <c-tabs id="myTabs" type="tabs" fill justify>
+              <c-tabs.item target="home" text="Home" active />
+              <c-tabs.item target="profile" text="Profile" />
+              <c-tabs.item target="contact" text="Contact" />
+            </c-tabs>
+            <c-tabs.content>
+              <c-tabs.pane id="home" active>
+                This is the home tab content. It contains information about the home section.
+              </c-tabs.pane>
+              <c-tabs.pane id="profile">
+                This is the profile tab content. Here you would find profile-related information.
+              </c-tabs.pane>
+              <c-tabs.pane id="contact">
+                This is the contact tab content. Contact information and forms would go here.
+              </c-tabs.pane>
+            </c-tabs.content>
+            <div class="d-flex mt-3">
+              <c-tabs id="verticalTabs" type="pills" vertical>
+                <c-tabs.item target="vhome" text="Home" active />
+                <c-tabs.item target="vprofile" text="Profile" />
+                <c-tabs.item target="vcontact" text="Contact" />
+              </c-tabs>
+              <c-tabs.content>
+                <c-tabs.pane id="vhome" active>
+                  This is the home tab content. It contains information about the home section.
+                </c-tabs.pane>
+                <c-tabs.pane id="vprofile">
+                  This is the profile tab content. Here you would find profile-related information.
+                </c-tabs.pane>
+                <c-tabs.pane id="vcontact">
+                  This is the contact tab content. Contact information and forms would go here.
+                </c-tabs.pane>
+              </c-tabs.content>
+            </div>
+          </c-card>
+          <!-- Toast Section -->
+          <c-card id="toast" header="Toast">
+            <c-button variant="primary"
+                      onclick="showToast()"
+                      text="Show Toast" />
+            <div class="position-fixed top-0 end-0 p-3"
+                 style="z-index: 11">
+              <c-toast id="liveToast">
+                <c-toast.header>
+                  <strong class="me-auto">Bootstrap</strong>
+                  <small>11 mins ago</small>
+                </c-toast.header>
+                <c-toast.body>
+                  Hello, world! This is a toast message.
+                </c-toast.body>
+              </c-toast>
+            </div>
+            {% comment %} <c-toast.activate target="#liveToast" /> {% endcomment %}
+            <script>
+              function showToast() {
+                var toastEl = document.getElementById('liveToast');
+                var toast = new bootstrap.Toast(toastEl);
+                toast.show();
+              }
+            </script>
+          </c-card>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

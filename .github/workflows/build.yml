@@ -23,6 +23,14 @@ jobs:
       - name: Set up Poetry env
         uses: SamuelJennings/cached-poetry-action@v1
 
+<<<<<<< HEAD
+=======
+      - name: Install pre-commit (ensure available)
+        run: |
+          poetry run pip install pre-commit
+          pre-commit --version
+
+>>>>>>> 0b87529f161672f6007f1617d5395393dee4c1d6
       - name: Load cached pre-commit
         uses: actions/cache@v4
         with:
